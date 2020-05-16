@@ -1,0 +1,4 @@
+CREATE DATABASE  IF NOT EXISTS `Ecommerce_CRUD` ;
+USE `Ecommerce_CRUD`;
+
+DROP TABLE IF EXISTS `customer`;
