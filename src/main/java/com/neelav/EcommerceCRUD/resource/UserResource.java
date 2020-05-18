@@ -1,7 +1,9 @@
 package com.neelav.EcommerceCRUD.resource;
 
+import com.neelav.EcommerceCRUD.exceptions.UserNotFoundException;
 import com.neelav.EcommerceCRUD.models.Users;
 import com.neelav.EcommerceCRUD.repository.UserRepository;
+import com.neelav.EcommerceCRUD.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,22 +15,35 @@ import java.util.Optional;
 public class UserResource {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping
     public List<Users> getAll()
     {
-        return userRepository.findAll();
+        return userService.getAll();
     }
 
     @GetMapping("/{userId}")
-    private Users getUser(@PathVariable String userId)
+    public Users getUser(@PathVariable String userId)
     {
-        Optional<Users> user= userRepository.findById(userId);
+       return userService.getUser(userId);
+    }
 
-        if(user.isPresent())
-            return user.get();
-        else
-            throw new NullPointerException();
+    @PostMapping()
+    public Users createUsers(@RequestBody Users user)
+    {
+        return userService.createUsers(user);
+    }
+
+    @DeleteMapping("/{email}")
+    public String deleteUser(@PathVariable String email)
+    {
+        return userService.deleteUser(email);
+    }
+
+    @PutMapping()
+    public Users updateUser(@RequestBody Users user)
+    {
+       return userService.updateUser(user);
     }
 }
