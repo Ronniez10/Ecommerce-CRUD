@@ -1,10 +1,10 @@
-package com.neelav.OmnicurisAssignment;
+package com.neelav.EcommerceCRUD;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OmnicurisAssignmentApplicationTests {
+class EcommerceCRUDApplicationTests {
 
 	@Test
 	void contextLoads() {

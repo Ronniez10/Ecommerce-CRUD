@@ -1,13 +1,13 @@
-package com.neelav.OmnicurisAssignment;
+package com.neelav.EcommerceCRUD;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OmnicurisAssignmentApplication {
+public class EcommerceCRUDApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OmnicurisAssignmentApplication.class, args);
+		SpringApplication.run(EcommerceCRUDApplication.class, args);
 	}
 
 }

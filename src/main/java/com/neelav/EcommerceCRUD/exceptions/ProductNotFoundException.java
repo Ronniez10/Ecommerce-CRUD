@@ -1,4 +1,4 @@
-package com.neelav.OmnicurisAssignment.exceptions;
+package com.neelav.EcommerceCRUD.exceptions;
 
 public class ProductNotFoundException extends  RuntimeException {
 

@@ -1,6 +1,5 @@
-package com.neelav.OmnicurisAssignment.models;
+package com.neelav.EcommerceCRUD.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -17,12 +16,17 @@ public class Orders {
     @Column(name="order_quantity")
     private int orderQuantity;
 
-    private String email;
+    //private String email;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "productId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Product product;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "email", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Users user;
 
     public Orders() {
     }
@@ -43,13 +47,6 @@ public class Orders {
         this.orderQuantity = orderQuantity;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public Product getProduct() {
         return product;
@@ -57,5 +54,13 @@ public class Orders {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
     }
 }

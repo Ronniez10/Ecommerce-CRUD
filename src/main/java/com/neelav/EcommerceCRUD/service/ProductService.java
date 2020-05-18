@@ -1,8 +1,6 @@
-package com.neelav.OmnicurisAssignment.service;
+package com.neelav.EcommerceCRUD.service;
 
-import com.neelav.OmnicurisAssignment.models.Product;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.neelav.EcommerceCRUD.models.Product;
 
 import java.util.List;
 

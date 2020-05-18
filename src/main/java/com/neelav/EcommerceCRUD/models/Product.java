@@ -1,6 +1,4 @@
-package com.neelav.OmnicurisAssignment.models;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package com.neelav.EcommerceCRUD.models;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,6 +10,7 @@ public class Product {
     //@JsonIgnore
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="product_id")
     private int id;
 
 

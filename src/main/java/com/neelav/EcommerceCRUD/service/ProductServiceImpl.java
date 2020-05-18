@@ -1,8 +1,8 @@
-package com.neelav.OmnicurisAssignment.service;
+package com.neelav.EcommerceCRUD.service;
 
-import com.neelav.OmnicurisAssignment.exceptions.ProductNotFoundException;
-import com.neelav.OmnicurisAssignment.models.Product;
-import com.neelav.OmnicurisAssignment.repository.ProductRepository;
+import com.neelav.EcommerceCRUD.exceptions.ProductNotFoundException;
+import com.neelav.EcommerceCRUD.models.Product;
+import com.neelav.EcommerceCRUD.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

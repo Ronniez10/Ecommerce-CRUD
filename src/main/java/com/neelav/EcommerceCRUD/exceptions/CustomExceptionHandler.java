@@ -1,4 +1,4 @@
-package com.neelav.OmnicurisAssignment.exceptions;
+package com.neelav.EcommerceCRUD.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,6 +7,21 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class CustomExceptionHandler {
+
+    @ExceptionHandler
+    public ResponseEntity<UserNotFoundException> handleUserNotFoundException(UserNotFoundException exc)
+    {
+        CustomErrorResponse error =new CustomErrorResponse();
+
+        error.setStatus(HttpStatus.NOT_FOUND.value());
+        error.setMessage(exc.getMessage());
+        error.setTimeStamp(System.currentTimeMillis());
+
+
+        return new ResponseEntity(error, HttpStatus.NOT_FOUND);
+    }
+
+
 
     // Exception Handler for ProductNotFound Exception
     @ExceptionHandler
@@ -19,7 +34,7 @@ public class CustomExceptionHandler {
         error.setTimeStamp(System.currentTimeMillis());
 
 
-        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+        return new ResponseEntity(error, HttpStatus.NOT_FOUND);
     }
 
     // Exception Handler for OrderQuantityExceedingStocks Exception
@@ -33,7 +48,7 @@ public class CustomExceptionHandler {
         error.setTimeStamp(System.currentTimeMillis());
 
 
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
     }
 
     // Exception Handler for OutOfStock Exception
@@ -47,7 +62,7 @@ public class CustomExceptionHandler {
         error.setTimeStamp(System.currentTimeMillis());
 
 
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
     }
 
     // Exception Handler for ZeroQuantityOrder Exception
@@ -61,6 +76,8 @@ public class CustomExceptionHandler {
         error.setTimeStamp(System.currentTimeMillis());
 
 
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
     }
+
+
 }

@@ -1,16 +1,12 @@
-package com.neelav.OmnicurisAssignment.resource;
+package com.neelav.EcommerceCRUD.resource;
 
 
-import com.neelav.OmnicurisAssignment.exceptions.ProductNotFoundException;
-import com.neelav.OmnicurisAssignment.models.Product;
-import com.neelav.OmnicurisAssignment.repository.ProductRepository;
-import com.neelav.OmnicurisAssignment.service.ProductService;
+import com.neelav.EcommerceCRUD.models.Product;
+import com.neelav.EcommerceCRUD.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
