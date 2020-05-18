@@ -1,8 +1,9 @@
 # Ecommerce-CRUD
+
 Ecommerce Full CRUD API
 
-PRODUCT API
--------------
+## PRODUCT API
+
 GET A Specefic PRODUCT
 
 http://localhost:8080/api/products/{productId}
@@ -23,8 +24,7 @@ DELETE A Product
 
 http://localhost:8080/api/products/{productId}
 
-ORDERS API
------------
+## ORDERS API
 
 GET A List of All ORDERS
 
@@ -34,18 +34,9 @@ PLACE A Order for a PPRODUCT
 
 http://localhost:8080/orders/{productId}
 
-ER DIAGRAMS AND TABLES
-----------------------
+## ER DIAGRAMS AND TABLES
 
 ![](images/Capture.JPG)  
 ![](images/Products.JPG)  
-![](images/Orders.JPG)
-
-
-
-
-
-
-
-
-
+![](images/Orders.JPG)  
+![](images/Users.JPG)
