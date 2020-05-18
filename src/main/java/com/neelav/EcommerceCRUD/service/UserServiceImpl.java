@@ -1,5 +1,6 @@
 package com.neelav.EcommerceCRUD.service;
 
+import com.neelav.EcommerceCRUD.exceptions.UserAlreadyExistsException;
 import com.neelav.EcommerceCRUD.exceptions.UserNotFoundException;
 import com.neelav.EcommerceCRUD.models.Users;
 import com.neelav.EcommerceCRUD.repository.UserRepository;
@@ -32,7 +33,13 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Users createUsers(Users user) {
-        return userRepository.save(user);
+
+        Optional<Users> tempUser = userRepository.findById(user.getEmail());
+
+        if(tempUser.isPresent())
+            throw new UserAlreadyExistsException("The Email Id is already Registered!");
+        else
+            return userRepository.save(user);
     }
 
     @Override

@@ -79,5 +79,19 @@ public class CustomExceptionHandler {
         return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
     }
 
+    //Exception Hndler for UserAlreadyExists Exception)
+    @ExceptionHandler
+    public ResponseEntity<UserAlreadyExistsException> handleUserAlreadyExistsException(UserAlreadyExistsException exc)
+    {
+        CustomErrorResponse error =new CustomErrorResponse();
+
+        error.setStatus(HttpStatus.BAD_REQUEST.value());
+        error.setMessage(exc.getMessage());
+        error.setTimeStamp(System.currentTimeMillis());
+
+
+        return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
+    }
+
 
 }
