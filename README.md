@@ -34,6 +34,14 @@ PLACE A Order for a PPRODUCT
 
 http://localhost:8080/orders/{productId}
 
+ER DIAGRAMS AND TABLES
+----------------------
+
+![](images/Capture.JPG)  
+![](images/Products.JPG)  
+![](images/Orders.JPG)
+
+
 
 
 
