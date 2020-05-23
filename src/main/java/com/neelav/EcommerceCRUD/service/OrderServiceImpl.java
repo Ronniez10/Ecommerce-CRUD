@@ -10,6 +10,7 @@ import com.neelav.EcommerceCRUD.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -80,5 +81,20 @@ public class OrderServiceImpl implements OrderService {
             throw new UserNotFoundException("User Does not Exist");
         }
 
+    }
+
+    @Override
+    public List<Orders> getOrdersByUser(String userId) {
+
+        List<Orders> all = orderRepository.findAll();
+
+        List<Orders> result= new ArrayList<>();
+        for(Orders order : all)
+        {
+            if(order.getUser().getEmail().equals(userId))
+                result.add(order);
+        }
+
+        return result;
     }
 }

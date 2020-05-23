@@ -70,4 +70,12 @@ public class Users {
     public void setEmail(String email) {
         this.email = email;
     }
+
+   /* public List<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Orders> orders) {
+        this.orders = orders;
+    }*/
 }

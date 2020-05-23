@@ -32,4 +32,12 @@ public class OrderResource {
     {
         return orderService.createOrder(order,productId,userId);
     }
+
+    @GetMapping("/user/{userId}")
+    public List<Orders> getOrderByUser(@PathVariable String userId)
+    {
+
+        return orderService.getOrdersByUser(userId);
+    }
+
 }
